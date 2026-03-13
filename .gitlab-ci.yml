@@ -1,0 +1,26 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build_job:
+  stage: build
+  script:
+    - echo "Iniciando build do projeto..."
+    - echo "Estrutura preparada com sucesso."
+
+test_job:
+  stage: test
+  script:
+    - echo "Validando arquivos principais..."
+    - test -f README.md
+    - test -f .gitlab-ci.yml
+    - test -f docs/estudo-de-caso.md
+    - test -f docs/pipeline-explicacao.md
+    - echo "Validação concluída com sucesso."
+
+deploy_job:
+  stage: deploy
+  script:
+    - echo "Simulando deploy..."
+    - echo "Fluxo finalizado com sucesso."
